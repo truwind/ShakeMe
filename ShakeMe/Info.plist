@@ -39,5 +39,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>accelerometer</string>
+    </array>
+    <key>NSMotionUsageDescription</key>
+    <string>동작 센서에 대한 접근 권한이 필요합니다.</string>
 </dict>
 </plist>

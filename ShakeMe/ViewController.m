@@ -13,6 +13,7 @@
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *lbStepCount;
 
 @property (nonatomic, strong) CMMotionManager * motion;
 @property (nonatomic, strong) NSTimer * timer;
@@ -22,6 +23,10 @@
 @property (nonatomic, assign) double oldZAngle;
 
 @property (nonatomic, assign) NSInteger printPercent;
+
+
+#pragma mark - Step count
+@property (nonatomic, strong) CMPedometer * pedometer;
 @end
 
 @implementation ViewController
@@ -135,6 +140,36 @@
 
 - (IBAction)onClickedEnd:(id)sender {
     [self endMotionUpdate];
+}
+
+#pragma mark - CMPedometer 만보계
+- (IBAction)onClickStepCount:(id)sender {
+    [self startPedometer];
+}
+
+- (void) startPedometer {
+    if(!self.pedometer)
+        self.pedometer = [[CMPedometer alloc] init];
+    NSDate * fromDate = [NSDate date];
+    NSDate * toDate = [NSDate date];
+    
+    NSDate * today = [NSDate date];
+    // All intervals taken from Google
+    NSDate *yesterday = [today dateByAddingTimeInterval: -86400.0];
+    NSDate *thisWeek  = [today dateByAddingTimeInterval: -604800.0];
+    NSDate *lastWeek  = [today dateByAddingTimeInterval: -1209600.0];
+    
+    // To get the correct number of seconds in each month use NSCalendar
+    NSDate *thisMonth = [today dateByAddingTimeInterval: -2629743.83];
+    NSDate *lastMonth = [today dateByAddingTimeInterval: -5259487.66];
+    WS(weakSelf);
+    [self.pedometer queryPedometerDataFromDate:yesterday toDate:today withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
+        if(pedometerData.numberOfSteps){
+            NSInteger stepCount = pedometerData.numberOfSteps.integerValue;
+            NSLog(@"총 걸음 수 : %ld", (long)stepCount);
+            weakSelf.lbStepCount.text = [NSString stringWithFormat:@"걸음 수 : %ld", (long)stepCount];
+        }
+    }];
 }
 
 @end

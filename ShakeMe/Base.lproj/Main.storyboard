@@ -32,16 +32,36 @@
                                     <action selector="onClickedEnd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MDI-bB-OgL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9A6-1y-zEl">
+                                <rect key="frame" x="134.5" y="237.5" width="106" height="30"/>
+                                <state key="normal" title="Get Step Count"/>
+                                <connections>
+                                    <action selector="onClickStepCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i6j-Mq-Ku9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="걸음수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuV-sc-WtO">
+                                <rect key="frame" x="165" y="277.5" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="72b-hr-A0x" firstAttribute="top" secondItem="DuV-sc-WtO" secondAttribute="bottom" constant="30" id="87f-hM-Zbb"/>
+                            <constraint firstItem="9A6-1y-zEl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ENy-vm-3J8"/>
                             <constraint firstItem="72b-hr-A0x" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GIw-14-q1O"/>
                             <constraint firstItem="72b-hr-A0x" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Obc-ma-v5c"/>
                             <constraint firstItem="7x2-Ha-EN5" firstAttribute="top" secondItem="72b-hr-A0x" secondAttribute="bottom" constant="15" id="eBz-6s-tel"/>
+                            <constraint firstItem="DuV-sc-WtO" firstAttribute="top" secondItem="9A6-1y-zEl" secondAttribute="bottom" constant="10" id="nXE-de-B2n"/>
+                            <constraint firstItem="DuV-sc-WtO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oV3-6D-gAK"/>
                             <constraint firstItem="7x2-Ha-EN5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="r22-l7-cvw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lbStepCount" destination="DuV-sc-WtO" id="OYy-p0-5FV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
