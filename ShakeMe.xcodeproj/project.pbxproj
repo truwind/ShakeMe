@@ -15,6 +15,7 @@
 		304FB5731F74E66F00A039F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FB5721F74E66F00A039F3 /* main.m */; };
 		304FB57D1F74E66F00A039F3 /* ShakeMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FB57C1F74E66F00A039F3 /* ShakeMeTests.m */; };
 		304FB5881F74E66F00A039F3 /* ShakeMeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FB5871F74E66F00A039F3 /* ShakeMeUITests.m */; };
+		304FB5971F74E6A000A039F3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304FB5961F74E6A000A039F3 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		304FB5831F74E66F00A039F3 /* ShakeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		304FB5871F74E66F00A039F3 /* ShakeMeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakeMeUITests.m; sourceTree = "<group>"; };
 		304FB5891F74E66F00A039F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		304FB5961F74E6A000A039F3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304FB5971F74E6A000A039F3 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				304FB57B1F74E66F00A039F3 /* ShakeMeTests */,
 				304FB5861F74E66F00A039F3 /* ShakeMeUITests */,
 				304FB5611F74E66F00A039F3 /* Products */,
+				304FB5951F74E6A000A039F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +134,14 @@
 				304FB5891F74E66F00A039F3 /* Info.plist */,
 			);
 			path = ShakeMeUITests;
+			sourceTree = "<group>";
+		};
+		304FB5951F74E6A000A039F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				304FB5961F74E6A000A039F3 /* CoreMotion.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B78UJ3KK2S;
 				INFOPLIST_FILE = ShakeMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KMS.ShakeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,6 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B78UJ3KK2S;
 				INFOPLIST_FILE = ShakeMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KMS.ShakeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
